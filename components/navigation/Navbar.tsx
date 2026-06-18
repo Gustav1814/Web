@@ -1,0 +1,61 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion, useMotionValueEvent, useScroll, useSpring } from "motion/react";
+import { useAxioStore } from "@/lib/store";
+import { ScrollLink } from "@/components/ui/ScrollLink";
+import { NAV_ITEMS } from "@/lib/constants";
+
+const DARK_SECTIONS = new Set(["problem", "product", "niches", "trust", "pricing"]);
+
+export function Navbar() {
+  const setCursorMode = useAxioStore((state) => state.setCursorMode);
+  const activeSection = useAxioStore((state) => state.activeSection);
+  const dark = DARK_SECTIONS.has(activeSection);
+  const { scrollY, scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 130, damping: 28, mass: 0.35 });
+  const [scrolled, setScrolled] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (value) => {
+    setScrolled(value > 40);
+  });
+
+  return (
+    <motion.header
+      className={`navbar navbar--reference ${dark ? "navbar--on-dark" : "navbar--on-light"} ${scrolled ? "navbar--scrolled" : ""}`}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.45, duration: 0.8 }}
+    >
+      <ScrollLink className="reference-logo" href="#hero" aria-label="Axio home">
+        AXIO<span>®</span>
+      </ScrollLink>
+      <nav>
+        {NAV_ITEMS.map((item) => {
+          const sectionId = item.href.replace("#", "");
+          const isActive = activeSection === sectionId;
+          return (
+            <ScrollLink
+              key={item.href}
+              href={item.href}
+              aria-current={isActive ? "page" : undefined}
+              className={isActive ? "is-active" : ""}
+            >
+              {item.label}
+              {isActive && <motion.i layoutId="nav-active" className="navbar-active-line" />}
+            </ScrollLink>
+          );
+        })}
+      </nav>
+      <ScrollLink
+        className="reference-project-link"
+        href="#final"
+        onMouseEnter={() => setCursorMode("interactive")}
+        onMouseLeave={() => setCursorMode("default")}
+      >
+        START A PROJECT <i>↗</i>
+      </ScrollLink>
+      <motion.div className="navbar-progress" style={{ scaleX: progress }} />
+    </motion.header>
+  );
+}
