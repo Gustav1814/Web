@@ -21,7 +21,7 @@ export function DashboardExperience() {
   const [lead, setLead] = useState<(typeof leads)[number] | null>(null);
   const demoStatus = useAxioStore((state) => state.leadStatus);
 
-  useScrollRefresh([lead]);
+  useScrollRefresh(lead?.id ?? null);
 
   return (
     <SectionFrame id="dashboard" className="dashboard-experience">
@@ -36,7 +36,7 @@ export function DashboardExperience() {
 
         <div className="dashboard-shell premium-surface">
           <aside className="dashboard-nav">
-            <div className="dashboard-nav__mark">AX</div>
+            <div className="dashboard-nav__mark">OR</div>
             {["OV", "LD", "CV", "BK", "FL"].map((item, index) => (
               <span className={index === 0 ? "is-active" : ""} key={item}>{item}</span>
             ))}
@@ -89,7 +89,7 @@ export function DashboardExperience() {
                 <div><dt>Intent</dt><dd>{lead.intent}</dd></div>
                 <div><dt>Status</dt><dd>{lead.status}</dd></div>
               </dl>
-              <div className="drawer-transcript"><small>CUSTOMER</small><p>Can you share the next available option?</p><small>AXIO</small><p>Yes. I found a suitable slot and can reserve it now.</p></div>
+              <div className="drawer-transcript"><small>CUSTOMER</small><p>Can you share the next available option?</p><small>ORXIVO</small><p>Yes. I found a suitable slot and can reserve it now.</p></div>
             </motion.aside>
           )}
         </AnimatePresence>

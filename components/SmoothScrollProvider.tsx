@@ -11,24 +11,24 @@ import { useAxioStore } from "@/lib/store";
 
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
-  const [scrollLocked, setScrollLocked] = useState(true);
+  const [scrollLocked, setScrollLocked] = useState(false);
   const setActiveSection = useAxioStore((state) => state.setActiveSection);
   const setSectionProgress = useAxioStore((state) => state.setSectionProgress);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      setScrollLocked(false);
-      return;
+    const nativeScroll = window.matchMedia("(max-width: 900px), (pointer: coarse)").matches;
+    if (reduced || nativeScroll) {
+      const frame = requestAnimationFrame(() => setScrollLocked(false));
+      return () => cancelAnimationFrame(frame);
     }
 
     const handle = createSmoothScroll();
-    setLenis(handle.lenis);
-    handle.lenis.stop();
+    const frame = requestAnimationFrame(() => setLenis(handle.lenis));
 
     return () => {
+      cancelAnimationFrame(frame);
       handle.destroy();
-      setLenis(null);
     };
   }, []);
 
@@ -44,6 +44,31 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const nativeScroll = window.matchMedia("(max-width: 900px), (pointer: coarse)").matches;
+
+    if (nativeScroll) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            const id = (entry.target as HTMLElement).dataset.section as SectionId | undefined;
+            if (id) {
+              setActiveSection(id);
+              setSectionProgress(1);
+            }
+          }
+        },
+        { rootMargin: "-35% 0px -45%", threshold: 0 },
+      );
+
+      SECTION_IDS.forEach((id) => {
+        const element = document.querySelector<HTMLElement>(`[data-section="${id}"]`);
+        if (element) observer.observe(element);
+      });
+
+      return () => observer.disconnect();
+    }
+
     const triggers = SECTION_IDS.map((id) => {
       const element = document.querySelector<HTMLElement>(`[data-section="${id}"]`);
       if (!element) return null;

@@ -2,7 +2,7 @@
 
 import { Children, isValidElement, type ReactElement, type ReactNode } from "react";
 import { motion } from "motion/react";
-import { clipReveal, DURATION, EASE } from "@/lib/animation";
+import { DURATION, EASE } from "@/lib/animation";
 
 type SectionHeadingProps = {
   children: ReactNode;
@@ -38,27 +38,16 @@ export function SectionHeading({
   if (cinematic) {
     return (
       <Tag className={`section-heading section-heading--cinematic ${className}`.trim()}>
-        <span className="text-reveal__line">
-          <motion.span
-            className="text-reveal__inner"
-            initial={clipReveal.initial}
-            whileInView={clipReveal.whileInView}
-            viewport={clipReveal.viewport}
-            transition={clipReveal.transition}
-          >
-            {primary}
-          </motion.span>
-        </span>
-        {accent ? (
-          <motion.em
-            initial={{ opacity: 0, y: "80%" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.18, margin: "0px 0px -24% 0px" }}
-            transition={{ duration: DURATION.reveal, ease: EASE, delay: 0.15 }}
-          >
-            {accent}
-          </motion.em>
-        ) : null}
+        <motion.span
+          className="section-heading__inner"
+          initial={{ opacity: 0, y: 42 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.08, margin: "0px 0px -8% 0px" }}
+          transition={{ duration: DURATION.reveal, ease: EASE }}
+        >
+          {primary}
+          {accent ? <em>{accent}</em> : null}
+        </motion.span>
       </Tag>
     );
   }

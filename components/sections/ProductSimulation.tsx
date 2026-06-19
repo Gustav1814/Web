@@ -14,8 +14,8 @@ const demoTurns = [
   },
   {
     agent: "Which city works for you?",
-    reply: "Karachi",
-    field: ["CITY", "KARACHI"],
+    reply: "City center",
+    field: ["LOCATION", "CITY CENTER"],
   },
   {
     agent: "Weekday or weekend batch?",
@@ -48,7 +48,7 @@ export function ProductSimulation() {
 
         <div className="simulation-console premium-surface">
           <div className="simulation-console__topbar">
-            <span>AXIO LIVE SESSION</span>
+            <span>ORXIVO LIVE SESSION</span>
             <div><i /> ENCRYPTED CHANNEL</div>
             <button type="button" onClick={resetDemo}>RESET</button>
           </div>
@@ -56,7 +56,7 @@ export function ProductSimulation() {
           <div className="simulation-chat">
             <div className="chat-header">
               <span className="avatar">AS</span>
-              <div><strong>Axio · Institute Agent</strong><small>Responding instantly</small></div>
+              <div><strong>Orxivo · Institute Agent</strong><small>Responding instantly</small></div>
             </div>
             <div className="chat-transcript">
               <div className="bubble bubble--customer">Hi, I want to join IELTS classes.</div>

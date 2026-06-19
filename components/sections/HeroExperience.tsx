@@ -31,9 +31,9 @@ export function HeroExperience() {
         initial={{ opacity: 0, y: 65 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.55, duration: 1, ease: EASE }}
-        aria-label="Axio"
+        aria-label="Orxivo"
       >
-        AXIO
+        ORXIVO
       </motion.div>
 
       <div className="hero-reference__intro">
@@ -52,7 +52,7 @@ export function HeroExperience() {
           transition={{ delay: 2.05, duration: DURATION.reveal }}
         >
           <p>
-            Axio answers inquiries, qualifies leads, books appointments, follows up,
+            Orxivo answers inquiries, qualifies leads, books appointments, follows up,
             and hands serious customers to your team automatically.
           </p>
           <div className="hero-reference__actions">

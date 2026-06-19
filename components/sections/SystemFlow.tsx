@@ -15,7 +15,7 @@ export function SystemFlow() {
   const setSelectedNode = useAxioStore((state) => state.setSelectedNode);
   const selected = SYSTEM_NODES.find((node) => node.id === selectedNode);
 
-  useScrollRefresh([selectedNode]);
+  useScrollRefresh(selectedNode);
 
   return (
     <SectionFrame id="system" className="system-flow">
@@ -23,7 +23,7 @@ export function SystemFlow() {
         <div className="split-heading">
           <div>
             <SectionLabel>02 / CONTROL LAYER</SectionLabel>
-            <SectionHeading cinematic>Axio catches the conversation <em>before it dies.</em></SectionHeading>
+            <SectionHeading cinematic>Orxivo catches the conversation <em>before it dies.</em></SectionHeading>
           </div>
           <p>Click through the operating path. Every layer has one job and one accountable output.</p>
         </div>

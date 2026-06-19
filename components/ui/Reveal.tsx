@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type HTMLMotionProps } from "motion/react";
-import { EASE, fadeUp } from "@/lib/animation";
+import { fadeUp } from "@/lib/animation";
 
 type RevealProps = HTMLMotionProps<"div"> & {
   delay?: number;

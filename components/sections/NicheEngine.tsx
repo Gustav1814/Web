@@ -15,7 +15,7 @@ export function NicheEngine() {
   const setSelectedNiche = useAxioStore((state) => state.setSelectedNiche);
   const pack = NICHE_PACKS.find((item) => item.id === selectedNiche) ?? NICHE_PACKS[0];
 
-  useScrollRefresh([selectedNiche, pack.id]);
+  useScrollRefresh(`${selectedNiche}:${pack.id}`);
 
   return (
     <SectionFrame id="niches" className="niche-engine">

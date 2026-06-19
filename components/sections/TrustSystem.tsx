@@ -8,7 +8,7 @@ import { StaggerItem, StaggerReveal } from "@/components/ui/StaggerReveal";
 import { lineReveal } from "@/lib/animation";
 
 const controls = [
-  ["01", "Grounded answers", "Axio uses approved FAQs, services, pricing, schedules, and policies."],
+  ["01", "Grounded answers", "Orxivo uses approved FAQs, services, pricing, schedules, and policies."],
   ["02", "The next correct question", "Qualification follows the business workflow—not generic conversation."],
   ["03", "Structured lead memory", "Every useful answer becomes searchable, actionable data."],
   ["04", "Controlled handoff", "When nuance or authority is needed, a human receives full context."],

@@ -87,7 +87,7 @@ export function PremiumProductLayer() {
                 Yes. Would you prefer a morning or evening batch?
               </motion.div>
             </div>
-            <div className="preview-input"><span>Axio is responding...</span><i>↗</i></div>
+            <div className="preview-input"><span>Orxivo is responding...</span><i>↗</i></div>
           </section>
 
           <section className="preview-lead">

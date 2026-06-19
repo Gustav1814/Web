@@ -32,7 +32,7 @@ export const SYSTEM_NODES = [
     id: "channel",
     label: "Channel layer",
     short: "Web, WhatsApp, voice.",
-    detail: "Axio normalizes conversations across channels so the workflow behaves consistently everywhere.",
+    detail: "Orxivo normalizes conversations across channels so the workflow behaves consistently everywhere.",
   },
   {
     id: "agent",

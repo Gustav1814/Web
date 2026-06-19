@@ -52,11 +52,11 @@ export function Preloader() {
           onClick={dismiss}
         >
           <div className="preloader-reference__top">
-            <span>AXIO / AI FRONT OFFICE</span>
+            <span>ORXIVO / AI FRONT OFFICE</span>
             <span>INITIALIZING</span>
           </div>
           <div className="preloader-reference__word" aria-hidden="true">
-            {"AXIO".split("").map((letter, index) => (
+            {"ORXIVO".split("").map((letter, index) => (
               <motion.span
                 key={letter + index}
                 initial={{ opacity: 0, y: 24 }}

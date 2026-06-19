@@ -19,7 +19,7 @@ export function ModuleGrid() {
           {MODULES.map(([name, copy, code]) => (
             <StaggerItem key={name}>
               <GlassPanel className="module-card">
-                <span>{code}</span><i /><h3>{name}</h3><p>{copy}</p><small>CONNECTED TO AXIO CORE</small>
+                <span>{code}</span><i /><h3>{name}</h3><p>{copy}</p><small>CONNECTED TO ORXIVO CORE</small>
               </GlassPanel>
             </StaggerItem>
           ))}

@@ -1,7 +1,6 @@
+import type { Metadata } from "next";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import { Navbar } from "@/components/navigation/Navbar";
-import { CustomCursor } from "@/components/navigation/CustomCursor";
-import { Preloader } from "@/components/Preloader";
 import { AxioExperienceLayer } from "@/components/AxioExperienceLayer";
 import { HeroExperience } from "@/components/sections/HeroExperience";
 import { ProblemField } from "@/components/sections/ProblemField";
@@ -16,16 +15,22 @@ import { PricingPilot } from "@/components/sections/PricingPilot";
 import { FinalConvergence } from "@/components/sections/FinalConvergence";
 import { Footer } from "@/components/sections/Footer";
 import { ReferenceMotion } from "@/components/ReferenceMotion";
+import { GlobalServices } from "@/components/sections/GlobalServices";
+import { createMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createMetadata({
+  title: "Orxivo | Global AI Automation Agency for Chatbots, Voice Agents & Workflows",
+  description: "Orxivo builds AI chatbots, voice agents, lead generation systems, CRM automations, and workflow automation tools for businesses worldwide.",
+  path: "/",
+});
 
 export default function Home() {
   return (
     <SmoothScrollProvider>
-      <Preloader />
       <AxioExperienceLayer />
       <ReferenceMotion />
-      <CustomCursor />
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroExperience />
         <ProblemField />
         <SystemFlow />
@@ -36,6 +41,7 @@ export default function Home() {
         <TrustSystem />
         <ArchitectureStack />
         <PricingPilot />
+        <GlobalServices />
         <FinalConvergence />
       </main>
       <Footer />

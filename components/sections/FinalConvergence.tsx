@@ -12,9 +12,9 @@ export function FinalConvergence() {
       </div>
       <div className="final-convergence__content">
         <span>THE GAP IS MEASURABLE</span>
-        <SectionHeading cinematic>Every missed reply is a lost customer. <em>Axio closes the gap.</em></SectionHeading>
+        <SectionHeading cinematic>Every missed reply is a lost customer. <em>Orxivo closes the gap.</em></SectionHeading>
         <p>Build the front office that answers while intent is still alive.</p>
-        <MagneticButton href="mailto:hello@axio.systems?subject=Build%20my%20Axio%20demo">Build my demo</MagneticButton>
+        <MagneticButton href="/contact">Get an Automation Audit</MagneticButton>
       </div>
     </SectionFrame>
   );

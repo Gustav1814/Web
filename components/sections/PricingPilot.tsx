@@ -55,7 +55,7 @@ export function PricingPilot() {
                 ))}
               </ul>
               <strong>CUSTOM PILOT PRICING</strong>
-              <MagneticButton href="#final" variant={index === 1 ? "primary" : "ghost"}>
+              <MagneticButton href="/contact" variant={index === 1 ? "primary" : "ghost"}>
                 Scope this pilot
               </MagneticButton>
             </StaggerItem>

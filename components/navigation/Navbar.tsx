@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useSpring } from "motion/react";
 import { useAxioStore } from "@/lib/store";
 import { ScrollLink } from "@/components/ui/ScrollLink";
@@ -9,7 +9,6 @@ import { NAV_ITEMS } from "@/lib/constants";
 const DARK_SECTIONS = new Set(["problem", "product", "niches", "trust", "pricing"]);
 
 export function Navbar() {
-  const setCursorMode = useAxioStore((state) => state.setCursorMode);
   const activeSection = useAxioStore((state) => state.activeSection);
   const dark = DARK_SECTIONS.has(activeSection);
   const { scrollY, scrollYProgress } = useScroll();
@@ -23,12 +22,10 @@ export function Navbar() {
   return (
     <motion.header
       className={`navbar navbar--reference ${dark ? "navbar--on-dark" : "navbar--on-light"} ${scrolled ? "navbar--scrolled" : ""}`}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.45, duration: 0.8 }}
+      initial={false}
     >
-      <ScrollLink className="reference-logo" href="#hero" aria-label="Axio home">
-        AXIO<span>®</span>
+      <ScrollLink className="reference-logo" href="#hero" aria-label="Orxivo home">
+        ORXIVO<span>®</span>
       </ScrollLink>
       <nav>
         {NAV_ITEMS.map((item) => {
@@ -49,9 +46,8 @@ export function Navbar() {
       </nav>
       <ScrollLink
         className="reference-project-link"
-        href="#final"
-        onMouseEnter={() => setCursorMode("interactive")}
-        onMouseLeave={() => setCursorMode("default")}
+        href="/contact"
+        data-conversion="booking_click"
       >
         START A PROJECT <i>↗</i>
       </ScrollLink>
