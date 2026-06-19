@@ -11,18 +11,32 @@ const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space", disp
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: "Orxivo | Global AI Automation Agency", template: "%s" },
-  description: "Orxivo builds AI chatbots, voice agents, lead generation systems, CRM automations, and workflow automation tools for businesses worldwide.",
+  description: "Orxivo builds AI chatbots, voice agents, lead generation systems, CRM automations, and workflow automation for businesses worldwide.",
+  keywords: [
+    "AI chatbot agency",
+    "AI automation",
+    "voice agents",
+    "lead generation",
+    "CRM automation",
+    "workflow automation",
+    "AI for business",
+    "business automation systems",
+  ],
   applicationName: SITE_NAME,
   category: "technology",
   creator: SITE_NAME,
   publisher: SITE_NAME,
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
   verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },
-  icons: { icon: "/icon.svg" },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

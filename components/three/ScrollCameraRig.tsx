@@ -10,7 +10,7 @@ const cameraTargets: Record<string, [number, number, number]> = {
   system: [1.7, 0.1, 8],
   product: [-1.3, -0.2, 7.4],
   dashboard: [2.4, 0.5, 9.4],
-  niches: [-2.1, -0.2, 10],
+  industries: [-2.1, -0.2, 10],
   modules: [0, 0.4, 8.5],
   trust: [2.6, -0.4, 11],
   architecture: [-1.6, 0.6, 8.8],

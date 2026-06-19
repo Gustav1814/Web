@@ -40,7 +40,7 @@ export function ContactForm() {
   if (status === "sent") {
     return (
       <div className="contact-success" role="status">
-        <strong>Thanks—your project brief is ready.</strong>
+        <strong>Thanks. Your project brief is ready.</strong>
         <p>{endpoint ? "The Orxivo team will reply with next steps." : <>Email it to <a href="mailto:hello@orxivo.systems">hello@orxivo.systems</a> while the production form endpoint is being connected.</>}</p>
       </div>
     );

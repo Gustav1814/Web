@@ -20,7 +20,7 @@ import { createMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createMetadata({
   title: "Orxivo | Global AI Automation Agency for Chatbots, Voice Agents & Workflows",
-  description: "Orxivo builds AI chatbots, voice agents, lead generation systems, CRM automations, and workflow automation tools for businesses worldwide.",
+  description: "Orxivo builds AI chatbots, voice agents, lead generation systems, CRM automations, and workflow automation for businesses worldwide.",
   path: "/",
 });
 

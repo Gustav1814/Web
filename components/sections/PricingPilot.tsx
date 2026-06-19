@@ -22,23 +22,27 @@ const plans = [
   {
     index: "P.03",
     name: "Custom Rollout",
-    copy: "For multi-branch businesses and niche-specific operations.",
+    copy: "For multi-branch businesses and industry-specific operations.",
     details: ["Branch-aware routing", "Custom integrations", "Advanced permissions", "Dedicated rollout"],
   },
 ] as const;
 
 export function PricingPilot() {
   return (
-    <SectionFrame id="pricing" className="pricing-pilot">
+    <SectionFrame
+      id="pricing"
+      className="pricing-pilot"
+      ariaLabel="Controlled pilot implementation tiers for automation rollout"
+    >
       <div className="section-shell">
         <div className="split-heading section-body">
           <div>
             <SectionLabel>09 / IMPLEMENTATION</SectionLabel>
             <SectionHeading>
-              Start with a controlled pilot. <em>Scale what works.</em>
+              Start with a controlled pilot. <em>Scale when the numbers prove it works.</em>
             </SectionHeading>
           </div>
-          <p>Custom pilot pricing available. Scope is based on workflow depth, channels, and integration needs.</p>
+          <p>Custom pilot pricing based on workflow depth, channels, and integration scope. We deploy within 10 business days and optimize from live performance data.</p>
         </div>
         <StaggerReveal className="pilot-grid">
           {plans.map((plan, index) => (

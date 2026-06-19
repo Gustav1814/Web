@@ -12,7 +12,7 @@ const sectionIntensity: Record<string, number> = {
   system: 0.75,
   product: 0.9,
   dashboard: 1,
-  niches: 0.7,
+  industries: 0.7,
   modules: 0.82,
   trust: 0.55,
   architecture: 0.68,

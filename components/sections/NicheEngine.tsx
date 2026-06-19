@@ -18,14 +18,18 @@ export function NicheEngine() {
   useScrollRefresh(`${selectedNiche}:${pack.id}`);
 
   return (
-    <SectionFrame id="niches" className="niche-engine">
+    <SectionFrame
+      id="industries"
+      className="niche-engine"
+      ariaLabel="Industry-specific AI workflow automation for education, real estate, clinics, and more"
+    >
       <div className="section-shell">
         <div className="split-heading">
           <div>
-            <SectionLabel>05 / NICHE ENGINE</SectionLabel>
-            <SectionHeading>One intelligence engine. <em>Different business workflows.</em></SectionHeading>
+            <SectionLabel>05 / INDUSTRIES</SectionLabel>
+            <SectionHeading>One AI engine. <em>Configured for your industry.</em></SectionHeading>
           </div>
-          <p>The conversation logic, data model, and booking outcome reconfigure together.</p>
+          <p>We configure conversation logic, data models, and booking outcomes for your industry without rebuilding the core system.</p>
         </div>
         <div className="niche-tabs">
           {NICHE_PACKS.map((item) => (

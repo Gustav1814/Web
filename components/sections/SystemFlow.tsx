@@ -18,14 +18,18 @@ export function SystemFlow() {
   useScrollRefresh(selectedNode);
 
   return (
-    <SectionFrame id="system" className="system-flow">
+    <SectionFrame
+      id="system"
+      className="system-flow"
+      ariaLabel="Six-stage AI automation pipeline from inquiry to business outcome"
+    >
       <div className="section-shell">
         <div className="split-heading">
           <div>
             <SectionLabel>02 / CONTROL LAYER</SectionLabel>
-            <SectionHeading cinematic>Orxivo catches the conversation <em>before it dies.</em></SectionHeading>
+            <SectionHeading cinematic>A six-stage pipeline from inquiry to outcome. <em>Every step is accountable.</em></SectionHeading>
           </div>
-          <p>Click through the operating path. Every layer has one job and one accountable output.</p>
+          <p>Our systems follow a structured six-stage pipeline. Each stage has one job, one measurable output, and clear accountability.</p>
         </div>
 
         <div className="system-map">

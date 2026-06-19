@@ -66,8 +66,8 @@ export function PremiumProductLayer() {
               <small>WHATSAPP · NOW</small>
             </div>
             <div className="preview-contact">
-              <i>AK</i>
-              <div><strong>Areeba Khan</strong><small>New conversation</small></div>
+              <i>SM</i>
+              <div><strong>Sarah Mitchell</strong><small>New conversation</small></div>
             </div>
             <div className="preview-chat">
               <motion.div
@@ -76,7 +76,7 @@ export function PremiumProductLayer() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2.35, duration: DURATION.reveal, ease: EASE }}
               >
-                Hi, do you have weekend IELTS classes in Karachi?
+                Hi, do you have weekend IELTS classes near the city center?
               </motion.div>
               <motion.div
                 className="preview-message agent"
@@ -96,12 +96,12 @@ export function PremiumProductLayer() {
               <b>QUALIFIED</b>
             </div>
             <div className="preview-lead-name">
-              <div><strong>Areeba Khan</strong><small>#AX-1048 · Education</small></div>
+              <div><strong>Sarah Mitchell</strong><small>#AX-1048 · Education</small></div>
               <em>92</em>
             </div>
             <dl>
               <div><dt>Course</dt><dd>IELTS</dd></div>
-              <div><dt>City</dt><dd>Karachi</dd></div>
+              <div><dt>Location</dt><dd>City center</dd></div>
               <div><dt>Mode</dt><dd>Physical</dd></div>
               <div><dt>Batch</dt><dd>Weekend</dd></div>
             </dl>

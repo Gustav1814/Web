@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import { useAxioStore } from "@/lib/store";
 
-const DARK_SECTIONS = new Set(["problem", "product", "niches", "trust", "pricing", "hero"]);
+const DARK_SECTIONS = new Set(["problem", "product", "industries", "trust", "pricing", "hero"]);
 
 export function CustomCursor() {
   const x = useMotionValue(-100);

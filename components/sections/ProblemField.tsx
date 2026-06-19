@@ -18,14 +18,18 @@ const messages = [
 
 export function ProblemField() {
   return (
-    <SectionFrame id="problem" className="problem-field">
+    <SectionFrame
+      id="problem"
+      className="problem-field"
+      ariaLabel="Lead response time and revenue loss from slow follow-up"
+    >
       <div className="section-shell problem-field__layout">
         <AnimatedText className="problem-field__copy">
           <SectionLabel>01 / THE LEAK</SectionLabel>
-          <SectionHeading cinematic>Leads do not disappear. <em>Businesses let them cool down.</em></SectionHeading>
+          <SectionHeading cinematic>Slow replies cost you leads. <em>Our AI systems respond in under 4 seconds.</em></SectionHeading>
           <p>
-            Interest has a half-life. Every unanswered minute turns a real customer
-            into another closed tab.
+            Most teams take hours to answer a new inquiry. By then, the prospect has moved on.
+            Speed is one of the few levers you can control without adding headcount.
           </p>
         </AnimatedText>
 

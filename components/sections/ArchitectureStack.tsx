@@ -19,12 +19,16 @@ const layers = [
 
 export function ArchitectureStack() {
   return (
-    <SectionFrame id="architecture" className="architecture-stack">
+    <SectionFrame
+      id="architecture"
+      className="architecture-stack"
+      ariaLabel="Production-grade automation architecture that is scalable, observable, and replaceable"
+    >
       <div className="section-shell architecture-layout">
         <div className="architecture-copy">
           <SectionLabel>08 / ARCHITECTURE</SectionLabel>
-          <SectionHeading>Built as a system. <em>Understood at a glance.</em></SectionHeading>
-          <p>Each layer is replaceable, observable, and connected to one controlled data path.</p>
+          <SectionHeading>Production-grade architecture. <em>Scalable, observable, and fully replaceable.</em></SectionHeading>
+          <p>Each layer is independently replaceable, fully observable, and connected to one controlled data path.</p>
           <div className="architecture-key"><span><i className="cyan" />REAL-TIME</span><span><i className="violet" />PERSISTENT</span><span><i />HUMAN</span></div>
         </div>
         <div className="architecture-diagram">

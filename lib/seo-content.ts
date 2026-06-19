@@ -379,7 +379,7 @@ export const industryPages: IndustryPage[] = [
     slug: "saas",
     name: "SaaS",
     title: "AI automation for SaaS onboarding, support, and customer operations",
-    description: "Orxivo builds SaaS customer support automation, onboarding workflows, product assistants, operational dashboards, and CRM automations.",
+    description: "Orxivo builds SaaS customer support automation, onboarding workflows, AI product assistants, operational dashboards, and CRM automations.",
     intro: "Help SaaS teams guide users, resolve routine questions, identify account risk, and connect customer activity to support and revenue workflows.",
     problems: ["New users need guidance before they reach product value", "Support volume grows faster than the customer team", "Product, billing, support, and CRM context remain disconnected", "Expansion and risk signals are difficult to act on consistently"],
     workflows: [
@@ -433,7 +433,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-06",
     readingTime: "9 min read",
     service: "ai-calling-agents",
-    intro: "Appointment workflows are structured, time-sensitive, and repetitive—conditions where a carefully controlled AI calling agent can create real operational value.",
+    intro: "Appointment workflows are structured, time-sensitive, and repetitive. A carefully controlled AI calling agent can create real operational value.",
     sections: [
       { heading: "What an appointment voice agent handles", paragraphs: ["The agent can answer or place calls, identify the requested service, collect required details, check supported availability, and confirm a booking."], points: ["Inbound reception", "Outbound follow-up", "Booking and rescheduling", "Reminders and confirmations", "Human transfer"] },
       { heading: "The integrations that matter", paragraphs: ["Reliable booking requires more than speech. The agent needs calendar rules, customer records, service duration, location, availability, and notification workflows."] },

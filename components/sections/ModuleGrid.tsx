@@ -9,11 +9,15 @@ import { MODULES } from "@/lib/constants";
 
 export function ModuleGrid() {
   return (
-    <SectionFrame id="modules" className="module-grid-section">
+    <SectionFrame
+      id="modules"
+      className="module-grid-section"
+      ariaLabel="Modular AI agents for chat, voice, booking, CRM, and workflow automation"
+    >
       <div className="section-shell">
         <div className="center-heading">
           <SectionLabel>06 / SYSTEM MODULES</SectionLabel>
-          <SectionHeading>One core. <em>Specialized operators.</em></SectionHeading>
+          <SectionHeading>Modular AI agents. <em>Chat, voice, booking, and CRM on one stack.</em></SectionHeading>
         </div>
         <StaggerReveal className="module-grid">
           {MODULES.map(([name, copy, code]) => (

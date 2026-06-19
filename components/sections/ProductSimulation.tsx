@@ -36,14 +36,18 @@ export function ProductSimulation() {
   const resetDemo = useAxioStore((state) => state.resetDemo);
 
   return (
-    <SectionFrame id="product" className="product-simulation">
+    <SectionFrame
+      id="product"
+      className="product-simulation"
+      ariaLabel="Live AI lead qualification demo from conversation to booked meeting"
+    >
       <div className="section-shell">
         <div className="split-heading">
           <div>
             <SectionLabel>03 / PRODUCT SIMULATION</SectionLabel>
-            <SectionHeading cinematic>Watch a conversation become <em>pipeline.</em></SectionHeading>
+            <SectionHeading cinematic>AI lead qualification, live. <em>From first message to booked meeting.</em></SectionHeading>
           </div>
-          <p>This is one shared state: each answer builds the lead record and moves the operational dashboard.</p>
+          <p>Each answer the AI agent collects updates the lead profile, moves the score forward, and triggers the next step in the workflow.</p>
         </div>
 
         <div className="simulation-console premium-surface">

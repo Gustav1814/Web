@@ -6,7 +6,7 @@ import { useAxioStore } from "@/lib/store";
 import { ScrollLink } from "@/components/ui/ScrollLink";
 import { NAV_ITEMS } from "@/lib/constants";
 
-const DARK_SECTIONS = new Set(["problem", "product", "niches", "trust", "pricing"]);
+const DARK_SECTIONS = new Set(["problem", "product", "industries", "trust", "pricing"]);
 
 export function Navbar() {
   const activeSection = useAxioStore((state) => state.activeSection);

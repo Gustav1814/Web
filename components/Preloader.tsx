@@ -52,7 +52,7 @@ export function Preloader() {
           onClick={dismiss}
         >
           <div className="preloader-reference__top">
-            <span>ORXIVO / AI FRONT OFFICE</span>
+            <span>ORXIVO / AI AUTOMATION</span>
             <span>INITIALIZING</span>
           </div>
           <div className="preloader-reference__word" aria-hidden="true">

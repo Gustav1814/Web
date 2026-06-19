@@ -9,10 +9,10 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { useAxioStore } from "@/lib/store";
 
 const leads = [
-  { id: "A-1048", name: "Areeba Khan", source: "WhatsApp", intent: "IELTS weekend", score: 94, status: "Demo booked" },
-  { id: "A-1047", name: "Hamza Ali", source: "Website", intent: "Fee structure", score: 81, status: "Qualified" },
-  { id: "A-1046", name: "Sara Ahmed", source: "WhatsApp", intent: "Online course", score: 76, status: "Follow-up" },
-  { id: "A-1045", name: "Daniyal Noor", source: "Website", intent: "Campus timing", score: 62, status: "New" },
+  { id: "A-1048", name: "Sarah Mitchell", source: "Website", intent: "Enterprise demo", score: 94, status: "Demo booked" },
+  { id: "A-1047", name: "James Chen", source: "WhatsApp", intent: "Pricing inquiry", score: 81, status: "Qualified" },
+  { id: "A-1046", name: "Maria Torres", source: "WhatsApp", intent: "Service booking", score: 76, status: "Follow-up" },
+  { id: "A-1045", name: "David Park", source: "Website", intent: "Integration scope", score: 62, status: "New" },
 ] as const;
 
 import { useScrollRefresh } from "@/lib/use-scroll-refresh";
@@ -24,14 +24,18 @@ export function DashboardExperience() {
   useScrollRefresh(lead?.id ?? null);
 
   return (
-    <SectionFrame id="dashboard" className="dashboard-experience">
+    <SectionFrame
+      id="dashboard"
+      className="dashboard-experience"
+      ariaLabel="Operations dashboard for lead visibility, status tracking, and team handoff"
+    >
       <div className="section-shell">
         <div className="split-heading">
           <div>
             <SectionLabel>04 / OPERATIONS</SectionLabel>
-            <SectionHeading>The conversation is visible. <em>The next action is obvious.</em></SectionHeading>
+            <SectionHeading>Full operational visibility. <em>Every lead, every status, every required action.</em></SectionHeading>
           </div>
-          <p>A serious operating view for teams who need context, urgency, and accountability—not another inbox.</p>
+          <p>Your operations team sees every active lead, its qualification status, and the next required action, with full conversation history and handoff context.</p>
         </div>
 
         <div className="dashboard-shell premium-surface">
