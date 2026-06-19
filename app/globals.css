@@ -56,6 +56,7 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgba(89, 216, 255, 0.35) #05070b;
   overflow-x: clip;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -7003,5 +7004,257 @@ h3,
   .seo-button,
   .global-services nav a {
     transition: none;
+  }
+}
+
+/* ========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px), (pointer: coarse) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .navbar {
+    backdrop-filter: blur(12px);
+  }
+
+  .navbar--reference {
+    backdrop-filter: blur(12px) saturate(120%);
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .axio-canvas {
+    display: none !important;
+  }
+
+  .section-transition {
+    display: none;
+  }
+
+  .section-transition__curtain,
+  .section-transition span,
+  .section-transition i {
+    display: none;
+  }
+
+  .section-frame .section-shell {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .section-heading {
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .motion-ready .section-frame.motion-pending .section-shell,
+  .motion-ready .section-frame.motion-pending .section-heading {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+
+  .premium-surface,
+  .simulation-console.premium-surface,
+  .dashboard-shell.premium-surface {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-reference--fixed::before,
+  .hero-reference--fixed::after {
+    display: none;
+  }
+
+  .message-field {
+    min-height: 480px;
+  }
+
+  .lost-message {
+    animation-duration: 8s;
+    animation-timing-function: ease-out;
+  }
+
+  .lost-message i {
+    animation: none;
+  }
+
+  .magnetic-button::before {
+    display: none;
+  }
+
+  .magnetic-button {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .magnetic-button:active {
+    transform: scale(0.98);
+  }
+
+  .seo-card-grid article,
+  .blog-grid article,
+  .case-grid article,
+  .pricing-grid article,
+  .industry-grid article,
+  .industry-systems div {
+    transform: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .seo-card-grid article:hover,
+  .blog-grid article:hover,
+  .case-grid article:hover,
+  .pricing-grid article:hover,
+  .industry-grid article:hover,
+  .industry-systems div:hover {
+    transform: none;
+  }
+
+  .premium-product-layer {
+    transform: none !important;
+  }
+
+  .premium-product-reflection {
+    display: none;
+  }
+
+  .qualification-float {
+    animation: none;
+  }
+
+  .preview-message {
+    animation: none;
+  }
+
+  .text-reveal__inner {
+    animation-duration: 0.5s !important;
+  }
+
+  .hero-css-enter {
+    animation-duration: 0.6s !important;
+  }
+
+  .hero-css-wordmark {
+    animation-duration: 0.8s !important;
+  }
+
+  .hero-reference__product-enter {
+    animation-duration: 0.6s !important;
+  }
+
+  .final-convergence__grid {
+    animation: none;
+    transform: none !important;
+  }
+
+  .control-list article {
+    transition: none;
+  }
+
+  .control-list article:hover {
+    background: transparent;
+  }
+
+  .system-node {
+    transition: none;
+  }
+
+  .system-node:hover {
+    background: transparent;
+    transform: none;
+  }
+
+  .module-card {
+    transition: background 0.15s ease;
+  }
+
+  .module-card:hover {
+    transform: none;
+  }
+
+  .niche-tabs button {
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .architecture-layer {
+    transition: none;
+  }
+
+  .architecture-layer:hover {
+    transform: none;
+  }
+
+  .pilot-grid article {
+    transition: border-color 0.15s ease;
+  }
+
+  .pilot-grid article:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .simulation-console,
+  .dashboard-shell {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .niche-tabs {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .niche-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-shell {
+    width: calc(100% - 24px);
+  }
+
+  .seo-hero h1 {
+    font-size: clamp(38px, 11vw, 54px);
+  }
+
+  .seo-section {
+    padding-block: 64px;
+  }
+
+  .seo-card-grid article,
+  .blog-grid article,
+  .case-grid article,
+  .pricing-grid article {
+    padding: 20px;
+  }
+
+  .contact-form {
+    gap: 14px;
   }
 }

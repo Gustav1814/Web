@@ -2,9 +2,11 @@
 
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "motion/react";
 import { DURATION, EASE } from "@/lib/animation";
+import { useIsMobile } from "@/lib/use-mobile";
 import type { MouseEvent } from "react";
 
 export function PremiumProductLayer() {
+  const isMobile = useIsMobile();
   const rotateX = useSpring(0, { stiffness: 120, damping: 24 });
   const rotateY = useSpring(0, { stiffness: 120, damping: 24 });
   const translateX = useSpring(0, { stiffness: 120, damping: 24 });
@@ -14,6 +16,7 @@ export function PremiumProductLayer() {
   const reflection = useMotionTemplate`radial-gradient(560px circle at ${lightX}% ${lightY}%, rgba(255,255,255,.095), transparent 38%)`;
 
   const onMove = (event: MouseEvent<HTMLDivElement>) => {
+    if (isMobile) return;
     const rect = event.currentTarget.getBoundingClientRect();
     const px = (event.clientX - rect.left) / rect.width;
     const py = (event.clientY - rect.top) / rect.height;
@@ -26,6 +29,7 @@ export function PremiumProductLayer() {
   };
 
   const reset = () => {
+    if (isMobile) return;
     rotateX.set(0);
     rotateY.set(0);
     translateX.set(0);
@@ -39,16 +43,16 @@ export function PremiumProductLayer() {
       <div className="premium-layer-shadow" />
       <motion.div
         className="premium-product-layer"
-        animate={{ y: [0, -8, 0] }}
-        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-        style={{
+        animate={isMobile ? undefined : { y: [0, -8, 0] }}
+        transition={isMobile ? undefined : { repeat: Infinity, duration: 6, ease: "easeInOut" }}
+        style={isMobile ? undefined : {
           rotateX,
           rotateY,
           x: translateX,
           transformPerspective: 1200,
         }}
       >
-        <motion.div className="premium-product-reflection" style={{ background: reflection }} />
+        {!isMobile && <motion.div className="premium-product-reflection" style={{ background: reflection }} />}
 
         <header className="premium-product-header">
           <div className="premium-product-brand">
@@ -72,17 +76,17 @@ export function PremiumProductLayer() {
             <div className="preview-chat">
               <motion.div
                 className="preview-message customer"
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: isMobile ? 6 : 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2.35, duration: DURATION.reveal, ease: EASE }}
+                transition={{ delay: isMobile ? 0.4 : 2.35, duration: isMobile ? 0.3 : DURATION.reveal, ease: EASE }}
               >
                 Hi, do you have weekend IELTS classes near the city center?
               </motion.div>
               <motion.div
                 className="preview-message agent"
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: isMobile ? 6 : 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2.8, duration: DURATION.reveal, ease: EASE }}
+                transition={{ delay: isMobile ? 0.6 : 2.8, duration: isMobile ? 0.3 : DURATION.reveal, ease: EASE }}
               >
                 Yes. Would you prefer a morning or evening batch?
               </motion.div>
@@ -122,9 +126,9 @@ export function PremiumProductLayer() {
 
         <motion.div
           className="qualification-float"
-          initial={{ opacity: 0, x: 15 }}
+          initial={{ opacity: 0, x: isMobile ? 8 : 15 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 3.15, duration: DURATION.reveal, ease: EASE }}
+          transition={{ delay: isMobile ? 0.7 : 3.15, duration: isMobile ? 0.3 : DURATION.reveal, ease: EASE }}
         >
           <i />
           <div><span>QUALIFICATION COMPLETE</span><strong>High intent lead</strong></div>

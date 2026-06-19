@@ -8,7 +8,8 @@ export function ReferenceMotion() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
+    const isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
+    if (reduced || isMobile) return;
 
     const context = gsap.context(() => {
       gsap.to(".hero-reference__wordmark", {

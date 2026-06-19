@@ -11,7 +11,9 @@ export function Preloader() {
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
+    const isMobile = window.matchMedia("(max-width: 900px), (pointer: coarse)").matches;
+    if (reduced || isMobile) {
+      setVisible(false);
       setScrollLocked(false);
       return;
     }

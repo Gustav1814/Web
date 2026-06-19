@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { clipReveal } from "@/lib/animation";
+import { clipReveal, clipRevealMobile, STAGGER, STAGGER_MOBILE } from "@/lib/animation";
+import { useIsMobile } from "@/lib/use-mobile";
 
 export function TextReveal({
   text,
@@ -13,6 +14,9 @@ export function TextReveal({
   as?: "h1" | "h2" | "h3" | "p";
 }) {
   const lines = text.split("\n").filter(Boolean);
+  const isMobile = useIsMobile();
+  const reveal = isMobile ? clipRevealMobile : clipReveal;
+  const stagger = isMobile ? STAGGER_MOBILE : STAGGER;
 
   return (
     <Tag className={`text-reveal ${className}`}>
@@ -20,10 +24,10 @@ export function TextReveal({
         <span key={`${line}-${index}`} className="text-reveal__line">
           <motion.span
             className="text-reveal__inner"
-            initial={clipReveal.initial}
-            whileInView={clipReveal.whileInView}
-            viewport={clipReveal.viewport}
-            transition={{ ...clipReveal.transition, delay: index * 0.08 }}
+            initial={reveal.initial}
+            whileInView={reveal.whileInView}
+            viewport={reveal.viewport}
+            transition={{ ...reveal.transition, delay: index * stagger }}
           >
             {line}
           </motion.span>

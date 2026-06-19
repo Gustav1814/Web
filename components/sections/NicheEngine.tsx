@@ -6,6 +6,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { NICHE_PACKS } from "@/lib/niche-data";
 import { useAxioStore } from "@/lib/store";
+import { useIsMobile } from "@/lib/use-mobile";
 
 import { DURATION, EASE } from "@/lib/animation";
 import { useScrollRefresh } from "@/lib/use-scroll-refresh";
@@ -14,6 +15,7 @@ export function NicheEngine() {
   const selectedNiche = useAxioStore((state) => state.selectedNiche);
   const setSelectedNiche = useAxioStore((state) => state.setSelectedNiche);
   const pack = NICHE_PACKS.find((item) => item.id === selectedNiche) ?? NICHE_PACKS[0];
+  const isMobile = useIsMobile();
 
   useScrollRefresh(`${selectedNiche}:${pack.id}`);
 
@@ -46,9 +48,9 @@ export function NicheEngine() {
         <motion.div
           className="niche-workbench"
           key={pack.id}
-          initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: DURATION.hover, ease: EASE }}
+          initial={{ opacity: 0, y: isMobile ? 0 : 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: isMobile ? 0.2 : DURATION.hover, ease: EASE }}
         >
           <div className="niche-message">
             <span>INCOMING / {pack.code}</span>

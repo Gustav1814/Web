@@ -7,6 +7,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { useAxioStore } from "@/lib/store";
+import { useIsMobile } from "@/lib/use-mobile";
 
 const leads = [
   { id: "A-1048", name: "Sarah Mitchell", source: "Website", intent: "Enterprise demo", score: 94, status: "Demo booked" },
@@ -20,6 +21,7 @@ import { useScrollRefresh } from "@/lib/use-scroll-refresh";
 export function DashboardExperience() {
   const [lead, setLead] = useState<(typeof leads)[number] | null>(null);
   const demoStatus = useAxioStore((state) => state.leadStatus);
+  const isMobile = useIsMobile();
 
   useScrollRefresh(lead?.id ?? null);
 
@@ -81,9 +83,10 @@ export function DashboardExperience() {
           {lead && (
             <motion.aside
               className="lead-drawer"
-              initial={{ opacity: 0, x: 80 }}
+              initial={{ opacity: 0, x: isMobile ? 20 : 80 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 80 }}
+              exit={{ opacity: 0, x: isMobile ? 20 : 80 }}
+              transition={{ duration: isMobile ? 0.2 : 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
               <button type="button" onClick={() => setLead(null)}>CLOSE ×</button>
               <span>LEAD / {lead.id}</span><h3>{lead.name}</h3>
